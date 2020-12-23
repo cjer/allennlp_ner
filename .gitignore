@@ -1,0 +1,4 @@
+other_confs/*
+output/*
+.ipynb_checkpoints
+*.pyc
