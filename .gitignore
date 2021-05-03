@@ -1,4 +1,5 @@
 other_confs/*
 output/*
+ud/output/*
 .ipynb_checkpoints
 *.pyc

@@ -1,13 +1,8 @@
-// local train_data = std.extVar("CONLL_TRAIN_DATA_PATH");
-// local dev_data = std.extVar("CONLL_DEV_DATA_PATH");
-local train_data = "/home/nlp/danb/NER/data/for_ncrf/token_gold_train_fix.bioul";
-local dev_data = "/home/nlp/danb/NER/data/for_ncrf/token_gold_dev_fix.bioul";
-// local train_data = "/net/nfs.corp/allennlp/dirkg/data/conll-formatted-ontonotes-5.0/data/train";
-// local dev_data = "/net/nfs.corp/allennlp/dirkg/data/conll-formatted-ontonotes-5.0/data/development";
-// local train_data = "/Users/dirkg/Documents/data/conll-formatted-ontonotes-5.0/data/train";
-// local dev_data = "/Users/dirkg/Documents/data/conll-formatted-ontonotes-5.0/data/development";
+local train_data = "/home/nlp/danb/NER/data/ud_ner/token_gold_train_fix.bioul";
+local dev_data = "/home/nlp/danb/NER/data/ud_ner/token_gold_dev_fix.bioul";
 
-local transformer_model = "bert-base-multilingual-cased";
+local cuda_device = std.parseInt(std.extVar("CUDA_DEVICE"));
+local transformer_model = std.extVar("TRANSFORMER_MODEL");
 local transformer_hidden_dim = 768;
 local epochs = 30;
 local batch_size = 16;
@@ -78,6 +73,6 @@ local pytorch_seed = std.parseInt(std.extVar("PYTORCH_SEED"));
         "num_epochs": epochs,
         "validation_metric": "+f1-measure-overall",
         "patience": 10,
-        "cuda_device": 2
+        "cuda_device": cuda_device
     }
 }

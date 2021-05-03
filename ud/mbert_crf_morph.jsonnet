@@ -1,5 +1,5 @@
-local train_data = "/home/nlp/danb/NER/data/for_ncrf/morph_gold_train.bioul";
-local dev_data = "/home/nlp/danb/NER/data/for_ncrf/morph_gold_dev.bioul";
+local train_data = "/home/nlp/danb/NER/data/ud_ner/morph_gold_train.bioul";
+local dev_data = "/home/nlp/danb/NER/data/ud_ner/morph_gold_dev.bioul";
 
 local transformer_model = "bert-base-multilingual-cased";
 local transformer_hidden_dim = 768;
